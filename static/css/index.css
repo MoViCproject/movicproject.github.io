@@ -1,0 +1,611 @@
+/*!
+ * Astrorix Academic Project Page Template
+ * https://github.com/astrorix
+ *
+ * Free to use and modify. Credit appreciated.
+ * Adapted for the MoViC project page.
+ */
+
+:root {
+  --ink: #0f172a;
+  --text: #3f3f46;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --blue: #2563eb;
+  --accent: #f59e0b;
+  /* MoViC orange, matches the teaser cover */
+  --accent-dark: #d97706;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background-color: #f8fafc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font-family: 'Outfit', sans-serif;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.hero {
+  background-color: transparent;
+}
+
+.hero.is-light {
+  background-color: #f1f5f9;
+}
+
+.section-spacing {
+  padding: 3rem 1.5rem !important;
+}
+
+.section-spacing .hero-body {
+  padding: 0 !important;
+}
+
+/* ---------- Cover ---------- */
+
+.cover {
+  --cover-title-size: 15rem;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Image + title layer. The image is centered (object-fit: cover), so the point where
+   the four tiles meet is always the center of this layer, which is where the title sits. */
+.cover-media {
+  position: absolute;
+  inset: 0;
+}
+
+.cover-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(2, 6, 23, 0.72) 0%, rgba(2, 6, 23, 0.42) 55%, rgba(2, 6, 23, 0.32) 100%);
+}
+
+.cover-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  margin: 0 !important;
+  white-space: nowrap;
+  font-size: var(--cover-title-size);
+  line-height: 1;
+  color: #f0faff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Subtitle and tagline sit just below the centered title. */
+.cover-text {
+  position: absolute;
+  top: calc(50% + var(--cover-title-size) / 2 + 1.25rem);
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 0 5%;
+  text-align: center;
+}
+
+.cover-title .acr {
+  color: var(--accent);
+}
+
+.cover-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 2.1rem;
+  line-height: 1.25;
+  color: #f0faff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.cover-tagline {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  letter-spacing: 0.02em;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cover-scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: #f0faff;
+  font-size: 1.6rem;
+  opacity: 0.85;
+  animation: cover-bounce 2s infinite;
+}
+
+.cover-scroll:hover {
+  color: var(--accent);
+}
+
+@keyframes cover-bounce {
+
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover-scroll {
+    animation: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cover {
+    /* 2x the old 3.6rem, shrinking only on phones too narrow to fit it */
+    --cover-title-size: min(7.2rem, calc((100vw - 16px) / 3.05));
+  }
+
+  .cover-subtitle {
+    font-size: 1.35rem;
+  }
+
+  .cover-tagline {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- Cards ---------- */
+
+.content-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+  margin-bottom: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.content-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+@media screen and (max-width: 768px) {
+  .content-card {
+    padding: 22px 18px;
+  }
+}
+
+.card-title {
+  margin-bottom: 25px !important;
+  text-align: left;
+}
+
+.subsection-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  margin: 2.2rem 0 1rem;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+  line-height: 1.3;
+}
+
+.subsection-title:first-child {
+  margin-top: 0;
+}
+
+/* ---------- Media ---------- */
+
+.video-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background: #000;
+  margin: 10px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  aspect-ratio: 16 / 9;
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.video-container video,
+.video-container iframe,
+.video-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.styled-image {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.styled-image:hover {
+  transform: scale(1.01);
+}
+
+.img-caption {
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.figure-caption {
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+.figure-caption b {
+  color: #334155;
+}
+
+.video-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  padding: 1px 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ---------- Key facts (not ".highlight": Bulma uses that class) ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 10px 0 28px;
+}
+
+.stat {
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  background: #f8fafc;
+}
+
+.stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Method stages ---------- */
+
+.stage-list {
+  text-align: left;
+}
+
+.stage-list p {
+  margin-bottom: 0.9rem !important;
+}
+
+.stage-label {
+  display: inline-block;
+  min-width: 2.1em;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.equation {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0.6rem 0 1rem;
+}
+
+/* ---------- Tables ---------- */
+
+.table-container {
+  margin: 24px 0 12px;
+}
+
+.table.is-bordered {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: hidden;
+}
+
+.table th {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  border-color: var(--line);
+}
+
+.table td,
+.table th {
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.table td:first-child,
+.table th:first-child {
+  text-align: left;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.table tr.is-ours td {
+  background-color: #fff7ed;
+}
+
+.table tr.is-ours td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.table-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+/* ---------- Title block ---------- */
+
+.publication-title {
+  font-weight: 800;
+  font-size: 3rem !important;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #0f172a, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(59, 130, 246, 0.1);
+  margin-bottom: 1.5rem !important;
+}
+
+.publication-title .acr {
+  -webkit-text-fill-color: var(--accent);
+  color: var(--accent);
+}
+
+@media screen and (max-width: 768px) {
+  .publication-title {
+    font-size: 2rem !important;
+  }
+}
+
+.publication-authors {
+  font-family: 'Inter', sans-serif;
+  color: #475569;
+}
+
+.publication-authors a {
+  color: var(--blue) !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px dashed transparent;
+}
+
+.publication-authors a:hover {
+  color: #1d4ed8 !important;
+  text-decoration: none;
+  border-bottom-color: #1d4ed8;
+}
+
+.button.is-dark {
+  background: linear-gradient(135deg, #1e293b, #0f172a) !important;
+  border: none;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  padding: 0 1.5rem;
+}
+
+.button.is-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(15, 23, 42, 0.3);
+  color: #fff !important;
+}
+
+.button .soon {
+  font-size: 0.75em;
+  opacity: 0.7;
+  margin-left: 0.4em;
+}
+
+.footer {
+  background-color: #f1f5f9;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--line);
+}
+
+.footer a {
+  color: var(--blue);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.link-block a {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.publication-venue {
+  font-weight: bold;
+}
+
+.author-block {
+  display: inline-block;
+  margin-right: 0.2em;
+}
+
+.eql-cntrb {
+  font-size: 0.9em;
+  color: var(--muted);
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.content p {
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+pre {
+  border-radius: 12px;
+  background: #f1f5f9;
+}
+
+hr {
+  background-color: var(--line);
+  height: 1px;
+  border: none;
+  margin: 2.5rem 0;
+}
+
+.img-caption+.content {
+  margin-top: 0.75rem;
+}
+
+/* ---------- Phones ---------- */
+
+@media screen and (max-width: 768px) {
+
+  /* A full-height cover would crop the 2x2 mosaic on a portrait screen, so show the
+     whole mosaic (title still at its center) and put the subtitle below it. */
+  .hero.is-fullheight.cover {
+    min-height: 0;
+  }
+
+  .cover-media {
+    position: relative;
+    inset: auto;
+  }
+
+  .cover-image {
+    position: relative;
+    inset: auto;
+    display: block;
+    height: auto;
+  }
+
+  .cover-text {
+    position: relative;
+    top: auto;
+    padding: 22px 18px 30px;
+    background: #020617;
+  }
+
+  .cover-scroll {
+    display: none;
+  }
+
+  .cover-subtitle br {
+    display: none;
+  }
+
+  /* Justified text leaves wide gaps on narrow columns. */
+  .content.has-text-justified,
+  .figure-caption {
+    text-align: left !important;
+  }
+
+  .section-spacing {
+    padding: 1.5rem 0.75rem !important;
+  }
+}
+
+/* ---------- Teaser (MARG-style, under the title) ---------- */
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 2.5rem;
+}
+
+.teaser-caption {
+  font-size: 1.15rem !important;
+  color: #475569 !important;
+  margin-top: 1.1rem;
+  line-height: 1.6;
+}

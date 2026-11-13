@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--
+ * MoViC project page.
+ * Built on the Astrorix Academic Project Page Template (https://github.com/astrorix),
+ * which is based on the Academic Project Page Template by Eliahu Horwitz.
+ -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="MoViC: real-time humanoid whole-body control from a single monocular RGB video stream, without wearable trackers or per-video policy training.">
+  <meta name="keywords"
+    content="Humanoid Robots, Whole-Body Control, Motion Tracking, Motion Representation, Vision-Based Teleoperation, Monocular Video">
+  <meta property="og:title" content="MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams" />
+  <meta property="og:description"
+    content="Live RGB video as a control signal for humanoid robots, with no wearable tracking devices or per-video policy training." />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <meta property="og:image" content="static/images/cover.jpg" />
+  <meta property="og:image:width" content="1920" />
+  <meta property="og:image:height" content="1080" />
+  <meta name="twitter:title" content="MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams">
+  <meta name="twitter:description"
+    content="Live RGB video as a control signal for humanoid robots, with no wearable tracking devices or per-video policy training.">
+  <meta name="twitter:image" content="static/images/cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams</title>
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+
+<body>
+
+  <!-- ==================== Cover ==================== -->
+  <section class="hero is-fullheight cover">
+    <div class="cover-media">
+      <img class="cover-image" src="static/images/cover.jpg"
+        alt="Four real-world MoViC demos: a humanoid robot imitating a dancer, following a performer through the Dangerous dance, moving a box with both hands, and carrying a bag with one hand.">
+      <div class="cover-shade"></div>
+      <h1 class="cover-title"><span class="acr">Mo</span><span class="acr">Vi</span><span class="acr">C</span></h1>
+    </div>
+    <div class="cover-text">
+      <p class="cover-subtitle">Real-Time Humanoid Whole-Body Control <br>from Monocular Video Streams</p>
+      <p class="cover-tagline">One RGB camera &middot; No wearable trackers &middot; No per-video training</p>
+    </div>
+    <a class="cover-scroll" href="#paper" aria-label="Scroll to paper details"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <!-- ==================== Title, authors, links ==================== -->
+  <section class="hero" id="paper">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="acr">MoViC</span>: Real-Time Humanoid Whole-Body <span class="acr">C</span>ontrol
+              from <span class="acr">Mo</span>nocular <span class="acr">Vi</span>deo Streams
+            </h1>
+
+            <!--
+              TODO (camera-ready): add the author list here, e.g.
+              <div class="is-size-5 publication-authors">...</div> containing
+              <span class="author-block"><a href="PERSONAL LINK" target="_blank">First Author</a><sup>1,*</sup>,</span>
+              and add affiliations / logos / contribution notes as on the LHBS page:
+              <div class="is-size-5 publication-authors"><span class="author-block"><sup>1</sup>Affiliation</span></div>
+              <span class="eql-cntrb"><small><sup>*</sup>Equal contribution</small></span>
+            -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- TODO: add href="..." target="_blank" and remove the "soon" label once each link is live. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=BrCNflBi-qM" target="_blank" rel="noopener noreferrer"
+                    class="external-link button is-medium is-rounded is-dark" style="margin-top: 15px;">
+                    <span class="icon"><i class="fab fa-youtube" style="color: #ef4444;"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a class="external-link button is-medium is-rounded is-dark" style="margin-top: 15px;">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span><span class="soon">(coming soon)</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Teaser video (layout from the MARG page) ==================== -->
+  <section class="hero teaser" id="teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/BrCNflBi-qM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=BrCNflBi-qM&amp;playsinline=1&amp;rel=0"
+            title="MoViC teaser video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <h2 class="subtitle has-text-centered teaser-caption">
+          <b>MoViC</b> drives a full-size humanoid from a single RGB camera in real time, with no wearable trackers
+          and no per-video training.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Abstract ==================== -->
+  <section class="section hero is-light section-spacing" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths content-card">
+          <h2 class="title is-3" style="margin-bottom: 25px;">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Real-time whole-body imitation from monocular video requires both a robust universal tracker and
+              high-quality real-time reconstruction. We present <b>MoViC</b>, a framework that uses live RGB video as a
+              control signal for humanoid robots without wearable tracking devices. The framework combines monocular
+              human motion reconstruction, robot retargeting, and a transformer-based behavior foundation model. The
+              policy receives proprioceptive history, a single explicit next-step reference, and a compact
+              frequency-domain motion representation that supplies temporal context without explicitly stacking future
+              reference frames, which reduces the input dimension and network size. During deployment, our
+              extrapolation method bridges the 10-Hz visual estimation with 50-Hz controller, enabling asynchronous
+              visual processing and policy execution. Hardware experiments further demonstrate highly dynamic motion
+              tracking and device-free teleoperation of bimanual and single-arm manipulation tasks from live monocular
+              RGB input.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== System overview ==================== -->
+  <section class="hero is-small section-spacing" id="overview">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths content-card">
+            <h2 class="title is-3 card-title">System Overview</h2>
+
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-value">1 RGB camera</div>
+                <div class="stat-label">No motion-capture suit, VR headset, or wearable trackers.</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">10&nbsp;Hz &rarr; 50&nbsp;Hz</div>
+                <div class="stat-label">Latent-dynamics extrapolation bridges vision and control rates.</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">One policy</div>
+                <div class="stat-label">No per-video or per-task training: the same tracker dances and
+                  teleoperates.</div>
+              </div>
+            </div>
+
+            <div class="content has-text-justified">
+              <p>
+                MoViC drives humanoid whole-body control from live monocular RGB video. An online video-to-motion
+                module, <b>SEG</b>, reconstructs the performer with SAM 3D Body at approximately 10&nbsp;Hz, retargets
+                the motion to the robot, and extrapolates it into 50&nbsp;Hz reference motions. A transformer-based
+                behavior foundation model then tracks these references by combining proprioceptive history with an
+                explicit next-step reference and a frequency-domain &theta; goal.
+              </p>
+            </div>
+            <img src="static/images/overview.jpg" class="styled-image" loading="lazy"
+              alt="MoViC overview: imitation examples, the transformer tracker, tracking errors against baselines, and the end-to-end deployment pipeline from RGB video to the humanoid.">
+            <p class="figure-caption">
+              <b>Overview.</b> Bottom: monocular RGB video is reconstructed, retargeted and extrapolated, producing
+              50-Hz control references. Top: imitation examples (left), the transformer tracker with frequency-domain
+              conditioning (center), and tracking errors on an unseen dance sequence (right; lower is better).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Algorithm framework ==================== -->
+  <section class="hero is-small is-light section-spacing" id="method">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths content-card">
+            <h2 class="title is-3 card-title">Algorithm Framework</h2>
+            <img src="static/images/framework.jpg" class="styled-image" loading="lazy"
+              alt="Framework diagram: (a) frozen frequency-domain motion encoder, (b) transformer actor, (c) SEG deployment module, (d) PPO training with a privileged critic.">
+            <div class="content stage-list">
+              <p><b>Overview of the whole-body motion-tracking framework.</b></p>
+              <p>
+                <span class="stage-label">(a)</span><b>Frequency-domain motion encoder.</b> A frozen encoder, built
+                on latent dynamics, maps reference-motion windows to compact, phase-augmented frequency-domain codes
+                &theta;.
+              </p>
+              <p>
+                <span class="stage-label">(b)</span><b>Transformer actor.</b> The actor integrates ten frames of
+                proprioceptive history, a single next-control-step reference target, and a &theta; token through
+                self-attention. The output at a learnable query position is mapped to 24 joint position targets for
+                PD control.
+              </p>
+              <p>
+                <span class="stage-label">(c)</span><b>Deployment with SEG.</b> At deployment, reference motions are
+                produced by the SEG module, which combines SAM 3D Body reconstruction, latent-dynamics extrapolation,
+                and GMR motion retargeting. Extrapolation generates intermediate references for 50-Hz policy
+                execution from an approximately 10-Hz motion stream.
+              </p>
+              <p>
+                <span class="stage-label">(d)</span><b>Training.</b> The policy is optimized with PPO and a privileged
+                critic that receives privileged state history and the next-step reference target, but no &theta;
+                codes. The dashed branch is used only during training.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Real world: dynamic tracking ==================== -->
+  <section class="hero is-small section-spacing" id="real-dynamic">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths content-card">
+            <h2 class="title is-3 card-title">Real-World Experiments: Highly Dynamic Motion Tracking</h2>
+
+            <div class="columns">
+              <div class="column">
+                <div class="video-container">
+                  <video data-autoplay muted loop playsinline controls preload="metadata"
+                    poster="static/videos/real/dance.jpg">
+                    <source src="static/videos/real/dance.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <p class="has-text-centered is-size-6 mt-3 img-caption">Bencaogangmu dance from live RGB</p>
+              </div>
+              <div class="column">
+                <div class="video-container">
+                  <video data-autoplay muted loop playsinline controls preload="metadata"
+                    poster="static/videos/real/mimic_close.jpg">
+                    <source src="static/videos/real/mimic_close.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <p class="has-text-centered is-size-6 mt-3 img-caption">Whole-body imitation of a live performer</p>
+              </div>
+              <div class="column">
+                <div class="video-container">
+                  <video data-autoplay muted loop playsinline controls preload="metadata"
+                    poster="static/videos/real/mimic_gym.jpg">
+                    <source src="static/videos/real/mimic_gym.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <p class="has-text-centered is-size-6 mt-3 img-caption">Dangerous dance from live RGB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Real world: teleoperation ==================== -->
+  <section class="hero is-small is-light section-spacing" id="real-teleop">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths content-card">
+            <h2 class="title is-3 card-title">Real-World Experiments: Vision-Based Teleoperation</h2>
+
+            <div class="columns">
+              <div class="column">
+                <div class="video-container">
+                  <video data-autoplay muted loop playsinline controls preload="metadata"
+                    poster="static/videos/real/teleop_bimanual.jpg">
+                    <source src="static/videos/real/teleop_bimanual.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <p class="has-text-centered is-size-6 mt-3 img-caption">(a) Bi-manual pick, reorient, and place</p>
+              </div>
+              <div class="column">
+                <div class="video-container">
+                  <video data-autoplay muted loop playsinline controls preload="metadata"
+                    poster="static/videos/real/teleop_single_arm.jpg">
+                    <source src="static/videos/real/teleop_single_arm.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <p class="has-text-centered is-size-6 mt-3 img-caption">(b) Single-arm pick, carry, and place</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BibTeX (enable once the paper is public) ==================== -->
+  <!--
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{movic,
+  title   = {MoViC: Real-Time Humanoid Whole-Body Control from Monocular Video Streams},
+  author  = {},
+  journal = {},
+  year    = {}
+}</code></pre>
+    </div>
+  </section>
+  -->
+
+</body>
+
+</html>
